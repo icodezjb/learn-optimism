@@ -51,12 +51,23 @@
     - https://www.aicoin.com/zh-CN/article/399544
 25. Sequencer和Proposer失败，L2如何实施自我排序和紧急出口机制
     - https://www.theblockbeats.info/news/47939?from=telegram
+    - https://cloud.tencent.com/developer/news/1125413
 26. lock(L1)-deposit(L2)-withdraw(L2)-unlock(L1)
     - arbitrum:
       - (1) 排序器故障(deposit): 基金会集中运营; 出现异常时，用户可以通过L1在L2网络上强制交易
       - (2) 验证器故障(withdraw): 13个白名单实体组成欺诈证明系统; 出现异常6天8小时后，任何人都可以成为验证者并进行提款
       - (3) rollup合约升级(最坏情况下可以提取所有资产)退出窗口(unlock): 2天 (https://l2beat.com/scaling/projects/arbitrum#risk-analysis)
       - (4) Fast Exit / Liquidity Exit: 第三方桥(https://docs.arbitrum.io/intro/glossary#fast-exit--liquidity-exit)
-      - (5) 可以在L1上操作提取L2上的资产: force-inclusion(https://docs.arbitrum.io/learn-more/faq#can-i-withdraw-my-funds-from-arbitrum-back-to-ethereum-without-going-through-the-sequencer-what-about-funds-that-are-in-a-contract)
+      - (5) 可以绕过sequencer: force-inclusion(https://docs.arbitrum.io/learn-more/faq#can-i-withdraw-my-funds-from-arbitrum-back-to-ethereum-without-going-through-the-sequencer-what-about-funds-that-are-in-a-contract)
+      - (6) 可以在L1上操作提取L2上的资产
     - optmism:
-27. 
+      - (1) 排序器故障(deposit):基金会集中运行; 出现异常时，用户可以通过L1在L2网络上强制交易
+      - (2) 验证器故障(withdraw): 基金会集中运行; 当验证器离线时，用户将无法从L2提现到L1
+      - (3) rollup合约升级(最坏情况下可以提取所有资产)退出窗口(unlock): None(基金会可随时升级合约或暂停bridge) (https://l2beat.com/scaling/projects/optimism#risk-analysis)
+      - (4) Fast Exit / Liquidity Exit: 第三方桥?
+      - (5) 可以绕过sequencer: https://docs.optimism.io/stack/protocol/outages#bypassing-the-sequencer
+      - (6) 在L1上操作提取L2上的资产 
+27. 用原生 L2 代幣來支付交易手續費
+    https://medium.com/taipei-ethereum-meetup/l2-token-as-gas-fee-pros-and-cons-70c821076313
+28. 
+
